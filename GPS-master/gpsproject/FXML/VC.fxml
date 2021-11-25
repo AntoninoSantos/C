@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GPS.gpsproject.Controlador">
+    <left>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <ListView fx:id="list" minHeight="-Infinity" prefHeight="10.0" prefWidth="100.0" VBox.vgrow="ALWAYS" />
+                <Button fx:id="updateAll" onAction="#onUpdateAll" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Atualizar Todos (kms)" VBox.vgrow="NEVER">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="addButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAddButton" text="Adicionar Veículo" VBox.vgrow="NEVER">
+                    <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <tabs>
+                <Tab text="Visão Geral">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="487.0" prefWidth="715.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox fx:id="left" prefHeight="485.0" prefWidth="237.0">
+                                 <children>
+                                    <TitledPane fx:id="detailsvehicle" collapsible="false" prefHeight="200.0" prefWidth="125.0" text="Detalhes do Veículo" wrapText="true" VBox.vgrow="ALWAYS">
+                                       <content>
+                                          <TextArea editable="false" fx:id="detailsvehicletext" prefHeight="200.0" prefWidth="200.0" promptText="Detalhes" wrapText="true" />
+                                       </content>
+                                    </TitledPane>
+                                    <PieChart fx:id="pie" title="Custos" VBox.vgrow="ALWAYS" />
+                                    <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                                       <children>
+                                          <Button fx:id="categoria" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onCategoria" text="Por categoria" HBox.hgrow="ALWAYS" />
+                                          <Button fx:id="mensais" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onMensais" text="Mensais" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox fx:id="right" alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                                 <children>
+                                    <TitledPane fx:id="events" collapsible="false" maxHeight="1.7976931348623157E308" prefHeight="411.0" prefWidth="467.0" text="Lista de Eventos" VBox.vgrow="ALWAYS">
+                                       <content>
+                                          <ListView fx:id="eventslist" prefHeight="200.0" prefWidth="200.0" />
+                                       </content></TitledPane>
+                                    <HBox VBox.vgrow="NEVER">
+                                       <children>
+                                          <Button fx:id="gerais" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onGerais" text="Gerais" HBox.hgrow="ALWAYS" />
+                                          <Button fx:id="mecanica" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onMecanica" text="Mecânica" HBox.hgrow="ALWAYS" />
+                                          <Button fx:id="reparacoes" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onReparacoes" text="Reparações" HBox.hgrow="ALWAYS" />
+                                          <Button fx:id="manutencoes" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onManutencoes" text="Manutenções" HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <VBox alignment="BOTTOM_RIGHT" prefHeight="51.0" prefWidth="467.0" VBox.vgrow="NEVER">
+                                       <children>
+                                          <Button fx:id="addEvento" mnemonicParsing="false" onAction="#onAddEvento" style="-fx-background-radius: 5em; -fx-min-width: 30px; -fx-min-height: 30px; -fx-max-width: 30px; -fx-max-height: 30px;">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </Button>
+                                          <Button fx:id="eliminateButton" mnemonicParsing="false" onAction="#onEliminate" text="Eliminar Veículo">
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                             </VBox.margin>
+                                             <padding>
+                                                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+                </Tab>
+                <Tab text="Editar Detalhes">
+               <content>
+                  <VBox fx:id="detalhes" prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <TitledPane collapsible="false" prefHeight="250.0" prefWidth="515.0" text="Detalhes Gerais" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                                 <content>
+                                    <HBox>
+                                       <children>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Nome:" />
+                                                <TextField fx:id="nome" />
+                                                <Region prefHeight="200.0" prefWidth="200.0" />
+                                                <Label text="Modelo:" />
+                                                <TextField fx:id="modelo" disable="true" editable="false" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Label text="Matrícula:" />
+                                                <TextField fx:id="matricula" disable="true" editable="false" />
+                                                <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                                <Label text="Tipo:" />
+                                                <TextField fx:id="tipo" disable="true" prefWidth="150.0" VBox.vgrow="ALWAYS" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                          <VBox HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <Region prefHeight="63.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Region>
+                                                <Label text="Data de Registo" />
+                                                <DatePicker fx:id="registomatricula" disable="true" editable="false" VBox.vgrow="ALWAYS" />
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets left="10.0" right="10.0" />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </content>
+                              </TitledPane>
+                              <TitledPane collapsible="false" prefHeight="252.0" prefWidth="200.0" text="Seguro">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                                 <content>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label text="Seguradora" />
+                                          <TextField fx:id="seguradora" />
+                                          <Region prefHeight="200.0" prefWidth="200.0" />
+                                          <Label text="Tipo" />
+                                          <TextField fx:id="tiposeguro" />
+                                          <Region prefHeight="200.0" prefWidth="200.0" />
+                                          <Label text="Data de Registo" />
+                                          <DatePicker fx:id="registoseguro" editable="false" />
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <TitledPane collapsible="false" prefHeight="222.0" prefWidth="481.0" text="Outros detalhes" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </HBox.margin>
+                                 <content>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <VBox prefHeight="55.0" prefWidth="205.0" HBox.hgrow="SOMETIMES">
+                                                   <children>
+                                                      <Region prefHeight="200.0" prefWidth="200.0" />
+                                                      <Label text="Média de Kilómetros mensal:" />
+                                                      <Region prefHeight="200.0" prefWidth="200.0" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Region prefHeight="200.0" prefWidth="200.0" />
+                                                      <TextField fx:id="kmmensais" prefHeight="31.0" prefWidth="268.0" />
+                                                      <Region prefHeight="200.0" prefWidth="200.0" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <HBox prefHeight="55.0" prefWidth="448.0" />
+                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                             <children>
+                                                <VBox prefHeight="56.0" prefWidth="122.0" HBox.hgrow="NEVER">
+                                                   <children>
+                                                      <Region prefHeight="200.0" prefWidth="200.0" />
+                                                      <Label text="Kilómetros reais:" />
+                                                      <Region prefHeight="200.0" prefWidth="200.0" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                                   <children>
+                                                      <Region prefHeight="200.0" prefWidth="200.0" />
+                                                      <TextField fx:id="kmreais" />
+                                                      <Region prefHeight="200.0" prefWidth="200.0" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </content>
+                              </TitledPane>
+                              <VBox prefHeight="242.0" prefWidth="180.0">
+                                 <children>
+                                    <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                    <Button fx:id="guardaalteracoes" mnemonicParsing="false" onAction="#onGuardaAlteracoes" prefHeight="31.0" prefWidth="182.0" text="Guardar Alterações" textAlignment="CENTER">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="20.0" top="20.0" />
+                                       </padding>
+                                    </Button>
+                                    <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+                </Tab>
+                <Tab text="Calendário Geral">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <HBox fx:id="calendarbox" prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <TitledPane prefHeight="153.0" prefWidth="715.0" text="Detalhes">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <content>
+                              <TextArea fx:id="detailsdia" editable="false" prefHeight="200.0" prefWidth="200.0" />
+                           </content>
+                        </TitledPane>
+                     </children>
+                  </VBox>
+               </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </center>
+</BorderPane>

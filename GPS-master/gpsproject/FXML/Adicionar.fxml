@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<VBox prefHeight="459.0" prefWidth="715.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TitledPane fx:id="detalhes" collapsible="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="515.0" text="Detalhes Gerais" HBox.hgrow="ALWAYS">
+               <content>
+                  <HBox>
+                     <children>
+                        <VBox prefHeight="194.0" prefWidth="151.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Nome:" />
+                              <TextField fx:id="nome" />
+                              <Region prefHeight="200.0" prefWidth="200.0" />
+                              <Label text="Modelo:" />
+                              <TextField fx:id="modelo" disable="true" editable="false" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="194.0" prefWidth="157.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Matrícula:" />
+                              <TextField fx:id="matricula" />
+                              <Region prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                              <Label text="Tipo:" />
+                              <TextField fx:id="tipo" disable="true" editable="false" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox HBox.hgrow="ALWAYS">
+                           <children>
+                              <Region prefHeight="63.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Region>
+                              <Label text="Data de Registo" />
+                              <DatePicker fx:id="registomatricula" disable="true" editable="false" VBox.vgrow="ALWAYS" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </content>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </TitledPane>
+            <TitledPane fx:id="seguro" collapsible="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="252.0" prefWidth="200.0" text="Seguro">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <Label text="Seguradora" />
+                        <TextField fx:id="seguradora" />
+                        <Region prefHeight="200.0" prefWidth="200.0" />
+                        <Label text="Tipo" />
+                        <TextField fx:id="tiposeguro" />
+                        <Region prefHeight="200.0" prefWidth="200.0" />
+                        <Label text="Data de Registo" />
+                        <DatePicker fx:id="registoseguro" editable="false" />
+                     </children>
+                  </VBox>
+               </content>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </TitledPane>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TitledPane fx:id="outros" collapsible="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="222.0" prefWidth="481.0" text="Outros detalhes" HBox.hgrow="ALWAYS">
+               <content>
+                  <VBox prefHeight="190.0" prefWidth="518.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="55.0" prefWidth="205.0" HBox.hgrow="SOMETIMES">
+                                 <children>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                    <Label text="Média de Kilómetros mensal:" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                    <TextField fx:id="kmmensais" prefHeight="31.0" prefWidth="268.0" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="55.0" prefWidth="448.0" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox prefHeight="56.0" prefWidth="122.0" HBox.hgrow="NEVER">
+                                 <children>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                    <Label text="Kilómetros reais:" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                    <TextField fx:id="kmreais" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </TitledPane>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <Button fx:id="cancelar" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="182.0" text="Cancelar" textAlignment="CENTER">
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <Button fx:id="adicionar" minWidth="-Infinity" mnemonicParsing="false" prefHeight="31.0" prefWidth="182.0" text="Adicionar" textAlignment="CENTER">
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
